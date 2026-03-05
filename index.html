@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zenuxs Platform – Developer Tools, Authentication & Open Source</title>
+<meta name="description" content="Zenuxs is a developer ecosystem building authentication systems, developer tools, CLI utilities and open source platforms created by Rishabh Sharma.">
+<meta name="keywords" content="Zenuxs, developer tools, OAuth platform, developer ecosystem, CLI tools, authentication system, Rishabh Sharma">
+<meta name="author" content="Rishabh Sharma">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.zenuxs.in">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Zenuxs Platform – Developer Ecosystem">
+<meta property="og:description" content="Authentication platforms, developer tools, open source utilities and infrastructure built under the Zenuxs ecosystem.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.zenuxs.in">
+<meta property="og:site_name" content="Zenuxs">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zenuxs Developer Platform">
+<meta name="twitter:description" content="Developer ecosystem building authentication platforms, tools and open source software.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Organization",
+"name":"Zenuxs",
+"url":"https://www.zenuxs.in",
+"founder":{
+"@type":"Person",
+"name":"Rishabh Sharma",
+"url":"https://www.linkedin.com/in/rishabh-sharma-700895352/"
+},
+"sameAs":[
+"https://github.com/developer-rs5",
+"https://github.com/zenuxs-dev",
+"https://www.linkedin.com/in/rishabh-sharma-700895352/",
+"https://instagram.com/_zenuxs",
+"https://instagram.com/developer.rs",
+"https://discord.zenuxs.in"
+]
+}
+</script>
+
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui;background:#050505;color:#fff;overflow-x:hidden}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(12px);
+z-index:999
+}
+
+nav h2{font-weight:800;letter-spacing:1px}
+
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{color:#ddd;text-decoration:none;font-weight:500}
+nav a:hover{color:white}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+background:radial-gradient(circle at top,#1b1b1b,#000);
+}
+
+.hero h1{
+font-size:64px;
+font-weight:800;
+max-width:900px;
+line-height:1.1;
+margin-bottom:20px
+}
+
+.hero p{
+max-width:650px;
+opacity:.7;
+font-size:18px
+}
+
+.hero-buttons{
+margin-top:35px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center
+}
+
+.btn{
+padding:14px 32px;
+border-radius:40px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+border:1px solid rgba(255,255,255,0.2)
+}
+
+.btn-primary{
+background:linear-gradient(90deg,#6a5cff,#8f7bff);
+border:none
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 40px rgba(120,100,255,0.4)
+}
+
+section{padding:120px 8%}
+
+.section-title{
+font-size:42px;
+text-align:center;
+margin-bottom:60px;
+font-weight:800
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px
+}
+
+.card{
+background:rgba(255,255,255,0.04);
+padding:35px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
+transition:.35s
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,0.08)
+}
+
+.card h3{font-size:22px;margin-bottom:10px}
+.card p{opacity:.7;font-size:15px}
+
+.card a{
+display:inline-block;
+margin-top:18px;
+color:#8f7bff;
+font-weight:600;
+text-decoration:none
+}
+
+.ecosystem{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+text-align:center
+}
+
+.eco-box{
+padding:30px;
+border-radius:16px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08)
+}
+
+.founder{
+display:flex;
+flex-wrap:wrap;
+gap:50px;
+align-items:center;
+justify-content:center;
+text-align:left
+}
+
+.founder img{
+width:180px;
+border-radius:50%;
+border:3px solid rgba(255,255,255,0.1)
+}
+
+footer{
+padding:60px 8%;background:#020202}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px
+}
+
+footer h4{margin-bottom:15px}
+
+footer a{
+display:block;
+color:#aaa;
+text-decoration:none;
+margin-bottom:8px
+}
+
+footer a:hover{color:white}
+
+.bottom{
+margin-top:40px;
+text-align:center;
+opacity:.6;
+font-size:14px
+}
+
+.fade{opacity:0;transform:translateY(40px);transition:1s}
+.fade.show{opacity:1;transform:none}
+
+@media(max-width:900px){
+.hero h1{font-size:42px}
+}
+
+@media(max-width:600px){
+nav ul{display:none}
+.hero h1{font-size:34px}
+.section-title{font-size:32px}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Zenuxs</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#ecosystem">Ecosystem</a></li>
+<li><a href="#founder">Founder</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h1>Zenuxs – Building Infrastructure for Developers</h1>
+<p>A developer ecosystem focused on authentication platforms, CLI tools, open source projects and developer utilities.</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="https://discord.zenuxs.in">Join Discord</a>
+<a class="btn" href="https://github.com/zenuxs-dev">GitHub</a>
+</div>
+</section>
+
+<section id="about" class="fade">
+<h2 class="section-title">About Zenuxs</h2>
+<p style="max-width:850px;margin:auto;text-align:center;opacity:.75;font-size:18px">
+Zenuxs is a developer ecosystem building authentication platforms, infrastructure tools and open source software. The platform focuses on simplifying development workflows while creating scalable developer systems.
+</p>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="card fade">
+<h3>Zenuxs Accounts</h3>
+<p>Authentication and OAuth infrastructure.</p>
+<a href="https://zenuxs.in">Visit →</a>
+</div>
+
+<div class="card fade">
+<h3>Easy Mongo</h3>
+<p>Simple MongoDB management interface.</p>
+<a href="https://easy-mongo.zenuxs.in">Visit →</a>
+</div>
+
+<div class="card fade">
+<h3>HMAX</h3>
+<p>High performance infrastructure utilities.</p>
+<a href="https://hmax.zenuxs.in">Visit →</a>
+</div>
+
+<div class="card fade">
+<h3>Zenuxs CLI</h3>
+<p>Command line developer utilities.</p>
+<a href="https://cli.zenuxs.in">Visit →</a>
+</div>
+
+<div class="card fade">
+<h3>AdvancedAuth</h3>
+<p>Authentication plugin for Minecraft servers.</p>
+<a href="https://plugins.zenuxs.in/advancedAuth">Visit →</a>
+</div>
+
+</div>
+</section>
+
+<section id="ecosystem" class="fade">
+<h2 class="section-title">Zenuxs Ecosystem</h2>
+
+<div class="ecosystem">
+
+<div class="eco-box">
+<h4>Authentication</h4>
+<p>OAuth login and identity platform.</p>
+</div>
+
+<div class="eco-box">
+<h4>Developer Tools</h4>
+<p>Utilities designed for developers.</p>
+</div>
+
+<div class="eco-box">
+<h4>Open Source</h4>
+<p>Community driven developer software.</p>
+</div>
+
+<div class="eco-box">
+<h4>Plugins</h4>
+<p>Systems like AdvancedAuth for Minecraft.</p>
+</div>
+
+</div>
+</section>
+
+<section id="founder" class="fade">
+<h2 class="section-title">Founder</h2>
+
+<div class="founder">
+
+<img src="profile.jpg" alt="Rishabh Sharma Founder of Zenuxs">
+
+<div style="max-width:560px">
+<h3>Rishabh Sharma</h3>
+
+<p style="opacity:.8;margin-bottom:16px">
+Rishabh Sharma (Developer RS / RS5) is a 16‑year‑old self‑taught full‑stack and cloud developer from Sikar, Rajasthan and founder of Zenuxs. He focuses on building scalable, production‑ready systems and has over 3 years of development experience.
+</p>
+
+<p style="opacity:.8;margin-bottom:16px">
+He specializes in web development, backend infrastructure, DevOps and developer platforms. Through Zenuxs he builds authentication systems, developer tools, CLI utilities and open‑source software designed for real‑world production environments.
+</p>
+
+<p style="opacity:.8;margin-bottom:22px">
+With more than 20 completed projects, he actively shares technical insights and developer humor on Instagram while maintaining open‑source projects on GitHub.
+</p>
+
+<div style="display:flex;flex-wrap:wrap;gap:14px">
+<a class="btn" href="https://github.com/developer-rs5">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/rishabh-sharma-700895352/">LinkedIn</a>
+<a class="btn" href="https://instagram.com/developer.rs">Instagram</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h4>Zenuxs</h4>
+<a href="https://www.zenuxs.in">Platform</a>
+<a href="https://zenuxs.in">Accounts</a>
+<a href="https://cli.zenuxs.in">CLI</a>
+<a href="https://easy-mongo.zenuxs.in">Easy Mongo</a>
+</div>
+
+<div>
+<h4>Developer</h4>
+<a href="https://github.com/developer-rs5">GitHub Personal</a>
+<a href="https://github.com/zenuxs-dev">GitHub Organization</a>
+<a href="https://www.linkedin.com/in/rishabh-sharma-700895352/">LinkedIn</a>
+</div>
+
+<div>
+<h4>Community</h4>
+<a href="https://discord.zenuxs.in">Discord</a>
+<a href="https://instagram.com/_zenuxs">Zenuxs Instagram</a>
+<a href="https://instagram.com/developer.rs">Developer Instagram</a>
+</div>
+
+<div>
+<h4>Contact</h4>
+<a href="mailto:mail@zenuxs.in">mail@zenuxs.in</a>
+</div>
+
+</div>
+
+<div class="bottom">
+© 2026 Zenuxs – Developer Ecosystem
+</div>
+
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add("show")
+}
+})
+})
+
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el))
+
+</script>
+
+</body>
+</html>
